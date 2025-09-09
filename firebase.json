@@ -1,31 +1,10 @@
 {
-  "hosting": [{
-    "target": "shell",
+  "hosting": {
     "public": "dist/shell/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
-  },{
-    "target": "works",
-    "public": "dist/works/browser",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }]
+  }
 }
