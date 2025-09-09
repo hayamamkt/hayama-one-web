@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:shell": "ng serve shell",
+    "start:works": "ng serve works",
+    "build:shell": "ng build shell",
+    "build:works": "ng build works",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:shell": "node dist/shell/server/server.mjs",
