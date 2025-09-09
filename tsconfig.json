@@ -35,6 +35,24 @@
     },
     {
       "path": "./projects/works/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/works/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/works/tsconfig.spec.json"
     }
   ]
 }
