@@ -53,6 +53,12 @@
     },
     {
       "path": "./projects/works/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/mfe1/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/mfe1/tsconfig.spec.json"
     }
   ]
 }
