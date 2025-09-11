@@ -88,6 +88,12 @@
     },
     {
       "path": "./projects/products/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/principal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/principal/tsconfig.spec.json"
     }
   ]
 }
