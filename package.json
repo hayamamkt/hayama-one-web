@@ -3,13 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:shell": "ng serve shell",
-    "start:works": "ng serve works",
-    "start:mfe1": "ng serve mfe1",
-    "build:shell": "ng build shell",
-    "build:works": "ng build works",
-    "build:mfe1": "ng build mfe1",
-    "watch": "ng build --watch --configuration development",
+    "start:dashboard": "ng serve dashboard",
+    "start:products": "ng serve products --port=4300",
+    "build:dashboard": "ng build dashboard",
+    "build:products": "ng build products",
+    "watch:dashboard": "ng build dashboard --watch --configuration development",
     "test": "ng test",
     "serve:ssr:shell": "node dist/shell/server/server.mjs",
     "serve:ssr:works": "node dist/works/server/server.mjs"
@@ -57,6 +55,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.2.0",
     "typescript": "~5.8.2"
   }
 }
