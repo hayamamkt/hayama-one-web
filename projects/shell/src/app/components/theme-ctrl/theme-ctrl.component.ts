@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-shell-theme-ctrl',
@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   template: `
     <label class="swap swap-rotate">
       <!-- this hidden checkbox controls the state -->
-      <input type="checkbox" class="theme-controller" value="abyss" />
+      <input type="checkbox" class="theme-controller" value="abyss"
+        [checked]="isDarkMode()"
+        (change)="toggleDarkMode()"
+      />
 
       <!-- sun icon -->
       <svg
@@ -29,5 +32,27 @@ import { Component } from '@angular/core';
   `
 })
 export class ThemeCtrlComponent {
+  private readonly LIGHT = "lemonade";
+  private readonly DARK = "forest";
+  private readonly THEME = "hym-theme"
+  isDarkMode = signal<boolean>(localStorage.getItem(this.THEME) === this.DARK);
 
+  constructor() {
+    // An effect to react to changes in the isDarkMode signal
+    // It will run immediately and every time the signal's value changes.
+    effect(() => {
+      // Get the current theme based on the signal's value
+      const newTheme = this.isDarkMode() ? this.DARK : this.LIGHT;
+
+      // Update the 'data-theme' attribute on the root HTML element
+      document.documentElement.setAttribute('data-theme', newTheme);
+
+      // Store the theme preference in localStorage for persistence
+      localStorage.setItem(this.THEME, newTheme);
+    });
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode.update(currentValue => !currentValue);
+  }
 }
