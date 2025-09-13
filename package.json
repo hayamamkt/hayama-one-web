@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve shell & ng serve todos",
+    "start": "npm run start:shell & npm run start:todos",
     "start:shell": "ng serve shell",
     "start:todos": "ng serve todos --port=4300",
     "build:shell": "ng build shell",
@@ -35,10 +35,13 @@
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.2.2",
     "@softarc/native-federation-node": "^2.0.10",
+    "@tailwindcss/postcss": "^4.1.13",
     "cors": "^2.8.5",
     "es-module-shims": "^1.5.12",
     "express": "^5.1.0",
+    "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.13",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
