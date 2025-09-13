@@ -5,3 +5,13 @@
 };
 
 @custom-variant dark (&:where([data-theme=abyss], [data-theme=abyss] *));
+
+@theme {
+  --animate-flash: flash 1s infinite;
+
+  @keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
