@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: lemonade --default, abyss --prefersdark;
+  themes: lemonade --default, dim --prefersdark;
 };
 
-@custom-variant dark (&:where([data-theme=abyss], [data-theme=abyss] *));
+@custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
 
 @theme {
   --animate-flash: flash 1s infinite;

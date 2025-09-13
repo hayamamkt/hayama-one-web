@@ -32,8 +32,9 @@ import { Component, effect, signal } from '@angular/core';
   `
 })
 export class ThemeCtrlComponent {
+  // Need to change src/style.css
   private readonly LIGHT = "lemonade";
-  private readonly DARK = "forest";
+  private readonly DARK = "dim";
   private readonly THEME = "hym-theme"
   isDarkMode = signal<boolean>(localStorage.getItem(this.THEME) === this.DARK);
 
