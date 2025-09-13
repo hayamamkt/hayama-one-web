@@ -7,6 +7,7 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {},
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -53,6 +54,54 @@
     },
     {
       "path": "./projects/works/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/mfe1/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/mfe1/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/dashboard/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/dashboard/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/my-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/my-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/products/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/products/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/products/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/products/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/principal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/principal/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/todos/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/todos/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.spec.json"
     }
   ]
 }

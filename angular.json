@@ -3,6 +3,113 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
+		"todos": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/todos",
+			"sourceRoot": "projects/todos/src",
+			"prefix": "app-todos",
+			"architect": {
+				"build": {
+					"builder": "@angular-architects/native-federation:build",
+					"options": {},
+					"configurations": {
+						"production": {
+							"target": "todos:esbuild:production"
+						},
+						"development": {
+							"target": "todos:esbuild:development",
+							"dev": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "@angular-architects/native-federation:build",
+					"options": {
+						"target": "todos:serve-original:development",
+						"rebuildDelay": 0,
+						"dev": true,
+						"port": 0
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular/build:extract-i18n"
+				},
+				"test": {
+					"builder": "@angular/build:karma",
+					"options": {
+						"tsConfig": "projects/todos/tsconfig.spec.json",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "projects/todos/public"
+							}
+						],
+						"styles": [
+							"projects/todos/src/styles.css"
+						]
+					}
+				},
+				"esbuild": {
+					"builder": "@angular/build:application",
+					"options": {
+						"browser": "projects/todos/src/main.ts",
+						"tsConfig": "projects/todos/tsconfig.app.json",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "projects/todos/public"
+							}
+						],
+						"styles": [
+							"projects/todos/src/styles.css"
+						],
+						"polyfills": [
+							"es-module-shims"
+						]
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kB",
+									"maximumError": "1MB"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve-original": {
+					"builder": "@angular/build:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "todos:esbuild:production"
+						},
+						"development": {
+							"buildTarget": "todos:esbuild:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4300
+					}
+				}
+			}
+		},
 		"shell": {
 			"projectType": "application",
 			"schematics": {},
@@ -19,7 +126,13 @@
 						},
 						"development": {
 							"target": "shell:esbuild:development",
-							"dev": true
+              "dev": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/shell/src/environments/environment.ts",
+                  "with": "projects/shell/src/environments/environment.development.ts"
+                }
+              ]
 						}
 					},
 					"defaultConfiguration": "production"
@@ -88,7 +201,13 @@
 						"development": {
 							"optimization": false,
 							"extractLicenses": false,
-							"sourceMap": true
+							"sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/shell/src/environments/environment.ts",
+                  "with": "projects/shell/src/environments/environment.development.ts"
+                }
+              ]
 						}
 					},
 					"defaultConfiguration": "production"
@@ -106,113 +225,6 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4200
-					}
-				}
-			}
-		},
-		"works": {
-			"projectType": "application",
-			"schematics": {},
-			"root": "projects/works",
-			"sourceRoot": "projects/works/src",
-			"prefix": "app-works",
-			"architect": {
-				"build": {
-					"builder": "@angular-architects/native-federation:build",
-					"options": {},
-					"configurations": {
-						"production": {
-							"target": "works:esbuild:production"
-						},
-						"development": {
-							"target": "works:esbuild:development",
-							"dev": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
-				"serve": {
-					"builder": "@angular-architects/native-federation:build",
-					"options": {
-						"target": "works:serve-original:development",
-						"rebuildDelay": 0,
-						"dev": true,
-						"port": 0
-					}
-				},
-				"extract-i18n": {
-					"builder": "@angular/build:extract-i18n"
-				},
-				"test": {
-					"builder": "@angular/build:karma",
-					"options": {
-						"tsConfig": "projects/works/tsconfig.spec.json",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/works/public"
-							}
-						],
-						"styles": [
-							"projects/works/src/styles.css"
-						]
-					}
-				},
-				"esbuild": {
-					"builder": "@angular/build:application",
-					"options": {
-						"browser": "projects/works/src/main.ts",
-						"tsConfig": "projects/works/tsconfig.app.json",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/works/public"
-							}
-						],
-						"styles": [
-							"projects/works/src/styles.css"
-						],
-						"polyfills": [
-							"es-module-shims"
-						]
-					},
-					"configurations": {
-						"production": {
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "500kB",
-									"maximumError": "1MB"
-								},
-								{
-									"type": "anyComponentStyle",
-									"maximumWarning": "4kB",
-									"maximumError": "8kB"
-								}
-							],
-							"outputHashing": "all"
-						},
-						"development": {
-							"optimization": false,
-							"extractLicenses": false,
-							"sourceMap": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
-				"serve-original": {
-					"builder": "@angular/build:dev-server",
-					"configurations": {
-						"production": {
-							"buildTarget": "works:esbuild:production"
-						},
-						"development": {
-							"buildTarget": "works:esbuild:development"
-						}
-					},
-					"defaultConfiguration": "development",
-					"options": {
-						"port": 4201
 					}
 				}
 			}

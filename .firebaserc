@@ -5,11 +5,11 @@
   "targets": {
     "hayama-one-alt": {
       "hosting": {
-        "works": [
-          "hayama-one-works"
-        ],
         "shell": [
           "hayama-one-alt"
+        ],
+        "todos": [
+          "todos-hayama-one"
         ]
       }
     }
