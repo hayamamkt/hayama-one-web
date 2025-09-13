@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:dashboard": "ng serve dashboard",
-    "start:products": "ng serve products --port=4300",
-    "build:dashboard": "ng build dashboard",
-    "build:products": "ng build products",
-    "watch:dashboard": "ng build dashboard --watch --configuration development",
+    "start": "ng serve shell & ng serve todos",
+    "start:shell": "ng serve shell",
+    "start:todos": "ng serve todos --port=4300",
+    "build:shell": "ng build shell",
+    "build:todos": "ng build todos",
+    "watch:shell": "ng build shell --watch --configuration development",
     "test": "ng test",
     "serve:ssr:shell": "node dist/shell/server/server.mjs",
     "serve:ssr:works": "node dist/works/server/server.mjs"
