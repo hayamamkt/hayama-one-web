@@ -28,6 +28,20 @@ import { HeaderComponent } from "./components/header/header.component";
         </nav>
       </div>
     </div>
+    <dialog id="search_modal" class="modal">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold">algolia.com</h3>
+        <p class="py-4">Press ESC key or click the button below to close</p>
+        <p>Use algolia.com to search</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <a class="btn btn-primary" title="close">Close</a>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
   `
 })
 export class App {
