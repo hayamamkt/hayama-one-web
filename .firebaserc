@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "hayama-one-alt"
+  },
+  "targets": {
+    "hayama-one-alt": {
+      "hosting": {
+        "todos": [
+          "todos-hayama-one"
+        ],
+        "main": [
+          "hayama-one-alt"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
