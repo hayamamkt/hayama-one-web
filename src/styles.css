@@ -5,3 +5,9 @@
 }
 
 @custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
+
+@layer components {
+  .bg-hero {
+    background-image: url(/images/hero2.jpg);
+  }
+}
