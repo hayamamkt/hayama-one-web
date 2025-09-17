@@ -1,6 +1,7 @@
 {
   "hosting": [
     {
+      "target": "main",
       "public": "dist/hayama-one-web/browser",
       "ignore": [
         "firebase.json",
