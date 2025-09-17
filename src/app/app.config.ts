@@ -11,6 +11,16 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes), provideFirebaseApp(() => initializeApp({ projectId: "hayama-one-alt", appId: "1:985998555494:web:1b1505b0634052c08430a7", storageBucket: "hayama-one-alt.firebasestorage.app", apiKey: "AIzaSyAsWInVwR2eALZEbx0tvij8uv9hF339rvw", authDomain: "hayama-one-alt.firebaseapp.com", messagingSenderId: "985998555494", measurementId: "G-B5PP02VXNK" })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage())
+    provideRouter(routes),
+    provideFirebaseApp(() => initializeApp({
+      projectId: "hayama-one-alt",
+      appId: "1:985998555494:web:1b1505b0634052c08430a7",
+      storageBucket: "hayama-one-alt.firebasestorage.app",
+      apiKey: "AIzaSyAsWInVwR2eALZEbx0tvij8uv9hF339rvw",
+      authDomain: "hayama-one-alt.firebaseapp.com",
+      messagingSenderId: "985998555494",
+      measurementId: "G-B5PP02VXNK" })
+    ),
+    provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage())
   ]
 };
